@@ -367,6 +367,9 @@
 "Assets/Script/MobGenerator.cs"
 "Assets/Script/MobPooling.cs"
 "Assets/Script/PlayerController.cs"
+"Assets/Script/UI Controller/ChangeScene.cs"
+"Assets/Script/UI Controller/GaugeController.cs"
+"Assets/Script/UI Controller/RunningTime.cs"
 "Assets/Script/Weapon.cs"
 -langversion:9.0
 
