@@ -39,7 +39,7 @@ public class ChangeScene : MonoBehaviour
         }
     }
 
-    public void ChlickWeapon()
+    public void ClickWeapon()
     {
         GameObject clickObject = EventSystem.current.currentSelectedGameObject;
 
