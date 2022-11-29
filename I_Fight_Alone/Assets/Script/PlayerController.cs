@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
     public GameObject[] weapons;
     public bool[] hasWeapons;
 
-    float speed;  // 플레이어 능력치
-    // float hp;
+    public float speed;  // 플레이어 능력치
+    public float hp;
     // float vit;
 
     float hAxis;  // 이동관련 변수
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         speed = 5.0f;
-        // hp = 100.0f;
+        hp = 100.0f;
         // vit = 0.0f;
     }
 
