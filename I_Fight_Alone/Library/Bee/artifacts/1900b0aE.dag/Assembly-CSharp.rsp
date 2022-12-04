@@ -120,9 +120,9 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"C:/Users/moond/OneDrive/바탕 화면/project/nahonja/I_Fight_Alone/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
--r:"C:/Users/moond/OneDrive/바탕 화면/project/nahonja/I_Fight_Alone/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll"
--r:"C:/Users/moond/OneDrive/바탕 화면/project/nahonja/I_Fight_Alone/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"C:/Users/moond/OneDrive/바탕 화면/nahonja1203/I_Fight_Alone/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
+-r:"C:/Users/moond/OneDrive/바탕 화면/nahonja1203/I_Fight_Alone/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll"
+-r:"C:/Users/moond/OneDrive/바탕 화면/nahonja1203/I_Fight_Alone/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"D:/unity/editor/2021.3.8f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"D:/unity/editor/2021.3.8f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"D:/unity/editor/2021.3.8f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -359,20 +359,28 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Assets/QuarterView 3D Action BE5/ReadMe/Scripts/ReadmeBE5.cs"
 "Assets/Script/Follow.cs"
+"Assets/Script/GameDirector.cs"
 "Assets/Script/GameManager.cs"
 "Assets/Script/Item/ItemGenerator.cs"
+"Assets/Script/Item/Items.cs"
 "Assets/Script/MapGenerator.cs"
+"Assets/Script/Mob/Boss.cs"
+"Assets/Script/Mob/BossMissile.cs"
+"Assets/Script/Mob/BossRock.cs"
 "Assets/Script/Mob/Enemy.cs"
+"Assets/Script/Mob/MobBullet.cs"
 "Assets/Script/Mob/MobGenerator.cs"
 "Assets/Script/Mob/MobPooling.cs"
 "Assets/Script/PlayerController.cs"
+"Assets/Script/Ranking/Order.cs"
 "Assets/Script/UI Controller/ChangeScene.cs"
 "Assets/Script/UI Controller/GameOver.cs"
-"Assets/Script/UI Controller/GaugeController.cs"
+"Assets/Script/UI Controller/RankingGenerator.cs"
 "Assets/Script/UI Controller/RunningTime.cs"
+"Assets/Script/UI Controller/SelectUpgrade.cs"
+"Assets/Script/UI Controller/SelectWeapon.cs"
 "Assets/Script/Weapons/Bullet.cs"
 "Assets/Script/Weapons/Weapon.cs"
-"Assets/testBtn.cs"
 -langversion:9.0
 
 /deterministic

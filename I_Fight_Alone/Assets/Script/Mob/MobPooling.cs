@@ -4,64 +4,59 @@ using UnityEngine;
 
 public class MobPooling : MonoBehaviour
 {
-    public GameObject enemy;
-    public float spawnTime = 0.5f;
-    public int maxSpawnCnt = 50;
-    int spawnCnt = 1;
-
-    int poolSize;
-    float deltaSpawnTime;
-    GameObject[] enemyPool;
-
-    GameObject mobHolder;
+    public GameObject[] enemy;
+    public Transform spawnPosition;
+    public int mobIndex = 0;
+    public float spawnTime;
+    public float checkTime;
+    public GameObject mobHolder;
 
     void Start()
     {
-        string holderName = "Generated Mob";
-        if(transform.Find(holderName))
-        {
-            DestroyImmediate(transform.Find(holderName).gameObject);
-        }
-        mobHolder = new GameObject(holderName);
-        mobHolder.transform.parent = transform;
-
-        deltaSpawnTime = 0.0f;
-        poolSize = maxSpawnCnt;
-
-        enemyPool = new GameObject[poolSize];
-        for(int i = 0; i<poolSize; i++)
-        {
-            enemyPool[i] = Instantiate(enemy) as GameObject;
-            enemyPool[i].transform.parent = mobHolder.transform;
-            enemyPool[i].name = string.Format("Enemy_{0}", i+1);
-            enemyPool[i].SetActive(false);
-        }
+        SpawnMob();
     }
 
     void Update()
     {
-        if(spawnCnt > maxSpawnCnt) return;
-        deltaSpawnTime += Time.deltaTime;
+        checkTime += Time.deltaTime;
+        CheckTime();
+    }
 
-        if(deltaSpawnTime > spawnTime)
+    void SpawnMob()
+    {
+        StartCoroutine(CoSpawnMob());
+    }
+
+    IEnumerator CoSpawnMob()
+    {
+        while (true)
         {
-            deltaSpawnTime = 0.0f;
-            for(int i = 0; i<poolSize-1; ++i)
+            if (mobIndex == (int)Enemy.Type.D)
             {
-                GameObject enemyObj1 = enemyPool[i];
-                GameObject enemyObj2 = enemyPool[i+1];
-
-                if(enemyObj1.activeSelf == true) continue;
-                if(enemyObj2.activeSelf == true) continue;
-
-                float x = Random.Range(-5.0f, 5.0f);
-                enemyObj1.transform.position = new Vector3(x, 0f, 3.0f);
-                enemyObj2.transform.position = new Vector3(x, 0f, 3.0f);
-
-                enemyObj1.SetActive(true);
-                enemyObj2.SetActive(true);
+                Instantiate(enemy[mobIndex], spawnPosition.position, Quaternion.identity, mobHolder.transform);
                 break;
             }
+            else
+            {
+                Instantiate(enemy[mobIndex], spawnPosition.position, Quaternion.identity, mobHolder.transform);
+            }
+            yield return new WaitForSeconds(spawnTime);
+        }
+    }
+
+    void CheckTime()
+    {
+        switch (checkTime)
+        {
+            case >= 30:
+                mobIndex = (int)Enemy.Type.D;
+                break;
+            case >= 20:
+                mobIndex = (int)Enemy.Type.C;
+                break;
+            case >= 10:
+                mobIndex = (int)Enemy.Type.B;
+                break;
         }
     }
 }
