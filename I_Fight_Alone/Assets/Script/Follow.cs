@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-    public Transform target;
+    public Transform[] target;
     public Vector3 offset;
+    Transform player;
+    int playerNum;
+
+    void Start()
+    {
+        playerNum = GameManager.instance.selectPlayer;
+        player = target[playerNum];
+    }
 
     void Update()
     {
-        transform.position = target.position + offset;
+        transform.position = player.position + offset;
     }
 }

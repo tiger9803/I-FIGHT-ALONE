@@ -6,14 +6,13 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {   
     public Text timerText;
+    public Text scoreText;
     
     void Start()
     {   
-        timerText.text = GameManager.instance.time;
-    }
+        timerText.text = "TIME" + GameManager.instance.time;
+        scoreText.text = "SCORE " + GameManager.instance.score.ToString();
 
-    void Update()
-    {
-        
+        GetComponent<Order>().ScoreSet("player", GameManager.instance.score, GameManager.instance.time);
     }
 }

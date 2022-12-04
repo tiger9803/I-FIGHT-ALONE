@@ -8,11 +8,12 @@ TagManager:
   - Floor
   - Melee
   - Range
+  - EnumyBullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Button

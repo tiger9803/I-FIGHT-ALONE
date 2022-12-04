@@ -14,7 +14,7 @@ public class ItemGenerator : MonoBehaviour
     void Start()
     {
         timer = 0.0f;
-        waitingTime = 5;
+        waitingTime = 2;
         // mapSize = new Vector2(100, 100); // MapGenerator 사용시 제거
 
         string holderName = "Generated Item";
@@ -44,7 +44,7 @@ public class ItemGenerator : MonoBehaviour
     {
         Vector3 itemPosition = new Vector3(Random.Range(-mapSize.x/2+2.0f, mapSize.x/2-2.0f), 0.5f, Random.Range(-mapSize.y/2+2.0f, mapSize.y/2-2.0f));
         
-        int itemNum = Random.Range(0, 2); // Item 개수
+        int itemNum = Random.Range(0, 6); // Item 개수
         Transform newItem;
 
         if(itemNum == 0)
@@ -55,10 +55,23 @@ public class ItemGenerator : MonoBehaviour
         {
             newItem = Instantiate(itemPrefab[1], itemPosition, Quaternion.Euler(new Vector3(0,0,0)));
         }
-        else
+        else if (itemNum == 2)
         {
-            newItem = Instantiate(itemPrefab[0], itemPosition, Quaternion.Euler(new Vector3(0,0,0)));
+            newItem = Instantiate(itemPrefab[2], itemPosition, Quaternion.Euler(new Vector3(0,0,0)));
         }
+         else if (itemNum == 3)
+        {
+            newItem = Instantiate(itemPrefab[3], itemPosition, Quaternion.Euler(new Vector3(0,0,0)));
+        }
+         else if (itemNum == 4)
+        {
+            newItem = Instantiate(itemPrefab[4], itemPosition, Quaternion.Euler(new Vector3(0,0,0)));
+        }
+         else
+        {
+            newItem = Instantiate(itemPrefab[5], itemPosition, Quaternion.Euler(new Vector3(0,0,0)));
+        }
+        
         
         newItem.localScale = Vector3.one * 0.3f;
         newItem.parent = itemHolder;

@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-
     private void Awake()
     {
         if(instance == null)
@@ -27,9 +26,17 @@ public class GameManager : MonoBehaviour
     }
 
     public int accScore = 0;     // 누적 score
+    public int level = 1;        // 레벨
     public int selectWeapon = 0; // 선택한 무기
     public int selectPlayer = 0; // 선택한 캐릭터
 
     // GameOver
-    public string time = "Time 00:00";
+    public string time = "00:00";
+    public int score = 0;
+
+    // Ranking
+    public string[] ranking = new string[5];
+    
+    
+
 }
